@@ -1,0 +1,51 @@
+{% extends 'frontend/index.html' %}
+{% load static %}
+{% block style %}
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f7ff;
+        }
+        .todoapp{
+            height: 100vh;
+        }
+        .form-control:focus{
+            box-shadow: none;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <main class="todoapp py-4">
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-lg-5">
+                    <div class="card shadow border-0 my-5">
+                        <div class="card-header text-center p-4 bg-light border-0">
+                            <h3>Todo Application</h3>
+                            <p class="text-muted">using AJAX request</p>
+                        </div>
+                        <div class="card-body pt-5 px-4">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="task form-control" id="task" placeholder="Enter Task"
+                                           required>
+                                    <button type="submit" class="btn btn-primary"><i
+                                            class="uil uil-create-dashboard"></i> Add
+                                    </button>
+                                    <button type="reset" class="btn btn-outline-secondary"><i
+                                            class="uil uil-history-alt"></i> Reset
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="task-list" class="mt-5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'task.js' %}"></script>
+{% endblock %}
